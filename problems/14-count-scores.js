@@ -29,7 +29,30 @@ console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 
 function countScores(people) {
   // Your code here
+  const obj = {};
+
+  for (let objcts of people) {
+    let [nameValue, scoreValue] = Object.values(objcts);
+
+    if (!obj[nameValue]) {
+      obj[nameValue] = scoreValue;
+    } else {
+      obj[nameValue] += scoreValue;
+    }
+  }
+
+  return obj;
 }
 
+let peeps = [
+  { name: "Anthony", score: 2 },
+  { name: "Winnie", score: 2 },
+  { name: "Fred", score: 2 },
+  { name: "Winnie", score: 2 },
+  { name: "Fred", score: 2 },
+  { name: "Anthony", score: 2 },
+  { name: "Winnie", score: 2 },
+];
+console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = countScores;
