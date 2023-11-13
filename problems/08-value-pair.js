@@ -11,7 +11,10 @@ valuePair(object1, object2, 'name'); // => [ 'One', 'Two' ]
 ***********************************************************************/
 
 function valuePair(obj1, obj2, key) {
-  // Your code here
+  const value1 = obj1[key];
+  const value2 = obj2[key];
+
+  return [value1, value2];
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
